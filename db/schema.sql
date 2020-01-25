@@ -1,4 +1,4 @@
-DROP DATABASE IF EXSITS foodDB;
+### Schema
 
 CREATE DATABASE foodDB;
 

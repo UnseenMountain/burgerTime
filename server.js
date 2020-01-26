@@ -1,26 +1,24 @@
 var express = require("express");
 
-//Express is run
+const PORT = process.env.PORT || 3000;
+
 var app = express();
 
-// use a random made port or if that is not avalible use the pre setone. 
-var PORT = process.env.PORT || 8000;
+app.use(express.static("public"));
 
-app.use(express.urlencoded({ extended: true}));
-app.use(express.json());
+app.use(bodyParser.urlencoded({extended:true}));
 
+app.use(bodyParser.json());
 
 var exphbs = require("express-handlebars");
 
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.engine("handlebars", exphbs({ defaultLayout: "main"}));
 app.set("view engine", "handlebars");
 
-var routes = require("./controllers/burger_controller");
+var routes = require("./controllers/burger_controller.js");
 
 app.use(routes);
 
 app.listen(PORT, function() {
-    // Log (server-side) when our server has started
-    console.log("Server listening on: http://localhost:" + PORT);
-  });
-  
+    console.log("Server listening on: http://localhost:" + PORT)
+});

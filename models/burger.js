@@ -7,5 +7,17 @@ var food = {
         })
     },
 
-    create: function(){}
-}
+    create: function(){
+        orm.create("food", cols, vals, function(res){
+            cb(res);
+        });
+    },
+
+    update: function(objColVal, condition, cb) {
+        orm.update("food", objColVal, condition, function(res){
+            cb(res)
+        });
+    }
+};
+
+module.exports = food;

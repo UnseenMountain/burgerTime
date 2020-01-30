@@ -15,7 +15,7 @@ router.get("/", function(req, res) {
 });
 
 router.post("/api/burgers", function(req, res){
-    burger.create([
+    food.create([
         "name", "eaten"
     ], [
         req.body.name, req.body.eaten
@@ -29,7 +29,7 @@ router.put("/api/burgers/:id", function(req, res){
 
     console.log("condition", condition);
 
-    burger.update({
+    food.update({
         eaten: req.body.eaten
     }, condition, function(result) {
         if (result.changedRows == 0) {

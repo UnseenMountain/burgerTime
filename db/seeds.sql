@@ -1,11 +1,11 @@
-INSERT INTO foods (food_name, devoured)
-VALUES ("Wood fire tritip pizza", false);
+INSERT INTO burgers (burgers_name, devoured)
+VALUES ("Wood fire tritip pizza burger", false);
 
-INSERT INTO foods (food_name, devoured)
-VALUES ("Onion ring wraped hotdogs", false);
+INSERT INTO burgers (burgers_name, devoured)
+VALUES ("Onion ring burger", false);
 
-INSERT INTO foods (food_name, devoured)
+INSERT INTO burgerss (burgers_name, devoured)
 VALUES ("Weaster bacon cheeseburger", false);
 
-INSERT INTO foods (food_name, devoured)
+INSERT INTO burgers (burgers_name, devoured)
 VALUES ("Bullet Cake", false);

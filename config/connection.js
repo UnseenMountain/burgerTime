@@ -8,7 +8,7 @@ var connection = mysql.createConnection({
     port: 3306,
     user: "root",
     password: "starwars2019",
-    database: "foodDB"
+    database: "burgerDB"
 });
 };
 

@@ -2,30 +2,30 @@
 var orm = require("../config/orm.js");
 
 
-var food = {
+var burger = {
     all: function(cb){
-        orm.all("food", function(res){
+        orm.all("burger", function(res){
             cb(res);
         });
     },
 
     create: function (col, values, cb){
-        orm.create("food", col, values, function(res){
+        orm.create("burger", col, values, function(res){
             cb(res);
         });
     },
 
     update: function(objColVals, condition, cb) {
-        orm.update("food", objColVals, condition, function(res){
+        orm.update("burger", objColVals, condition, function(res){
             cb(res)
         });
     },
     delete: function(condition, cb) {
-        orm.delete("food", condition, function(res) {
+        orm.delete("burger", condition, function(res) {
           cb(res);
         });
       }
 
 };
 
-module.exports = food;
+module.exports = burger;

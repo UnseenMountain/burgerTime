@@ -1,13 +1,13 @@
 ### Schema
 
-CREATE DATABASE foodDB;
+CREATE DATABASE burgerDB;
 
-USE foodDB;
+USE burgerDB;
 
-CREATE TABLE foods(
+CREATE TABLE burgers(
 
      id INT NOT NULL AUTO_INCREMENT,
-    food_name VARCHAR (100) NULL,
+    burger_name VARCHAR (100) NULL,
     devoured BOOLEAN DEFAULT false,
      PRIMARY key (id)
 )

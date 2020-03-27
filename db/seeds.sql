@@ -9,3 +9,6 @@ VALUES ("Weaster bacon cheeseburger", false);
 
 INSERT INTO burgers (burgers_name, devoured)
 VALUES ("Bullet Cake", false);
+
+INSERT INTO burgers (burgers_name, devoured)
+VALUES ("Bullet Cake", false);

@@ -1,25 +1,26 @@
-var express = require("express");
-var exphbs = require("express-handlebars");
+require("dotenv").config();
+const express = require("express");
 
-var PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 
-var app = express();
+const app = express();
 
 app.use(express.static("public"));
 
+// Parse application body
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-
-
-app.engine("handlebars", exphbs({ defaultLayout: "main"}));
+// Set Handlebars.
+const exphbs = require("express-handlebars");
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-var routes = require("./controllers/burger_controller.js");
+// Import routes and give the server access to them.
+const routes = require("./controllers/burgersController.js");
 
 app.use(routes);
 
 app.listen(PORT, function() {
-    console.log("Server listening on: http://localhost" + PORT)
+  console.log("Server listening on: http://localhost:" + PORT);
 });
-

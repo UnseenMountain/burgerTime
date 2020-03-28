@@ -12,3 +12,5 @@ VALUES ("Bullet Cake");
 
 INSERT INTO burgers (burger_name)
 VALUES ("Bullet Cake");
+INSERT INTO burgers (burger_name)
+VALUES ("Moon Cake");

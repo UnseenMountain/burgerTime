@@ -1,38 +1,52 @@
-<h1>Burgertown</h1>
+<div class="header-container">
+  <img id="hamburger-image" src="assets/img/burger.png" alt="Burger image.">
+  <header>Eat-Da-Burger!</header>
+</div>
 
-<h2>Burgers that are ready to be eaten!</h2>
+<div class="main-container">
+  <section id="available-hamburgers">
+    <ul id="burger-list">
+      {{#each burgers}}
+        {{#unless this.devoured}}
+          <li class="available-burger">
+            <span class="burgers">
+              {{this.id}}
+              {{this.burger_name}}
+            </span>
+            <span id="devour-button">
+              <form action="/{{this.id}}?_method=PUT" method="POST">
+                <input type="hidden" name="devoured" value="true">
+                <button class="devour-button" type="submit">Devour it!</button>
+              </form>
+            </span>
+          </li>
+        {{/unless}}
+      {{/each}}
+    </ul>
+  </section>
+  <section id="devoured-hamburgers">
+    <ul>
+      {{#each burgers}}
+        {{#if this.devoured}}
+          <li class="devour-burger">
+            {{this.id}}
+            {{this.burger_name}}
+          </li>
+        {{/if}}
+      {{/each}}
+    </ul>
+  </section>
+  <section id ="new-burger">
+    <form class="create-update-form" action="/" method="POST">
 
-<ul>
-  {{#each burgers}}
-    {{#unless devoured}}
-      {{> burgers/burger-block devoured=true}}
-    {{/unless}}
-  {{/each}}
-</ul>
+      <div class="form-group">
+        <textarea id="new-burger-text" rows="4" name="burger_name"></textarea>
+      </div>
 
-<h2>Burgers that have already been eaten :(</h2>
+      <button type="submit" id="new-burger-submit">Submit</button>
+    </form>
 
-<ul>
-  {{#each burgers}}
-    {{#if devoured}}
-      {{> burgers/burger-block2 devoured=false}}
-    {{/if}}
-  {{/each}}
-</ul>
+    <p>Enter a burger you want to eat. Click the "Submit" button.</p>
 
-<h2>Add a new Burger</h2>
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="ca">Burger Name:</label>
-    <input type="text" id="ca" name="name">
-  </div>
-
-  <div class="form-group">
-    <label for="devour">Devoured?</label><br>
-    <input type="radio" name="devoured" value="1" checked> Devoured<br>
-    <input type="radio" name="devoured" value="0"> Not Devoured
-  </div>
-
-  <button type="submit">Add Burger</button>
-</form>
+  </section>
+</div>
